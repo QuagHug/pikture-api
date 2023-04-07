@@ -10,8 +10,9 @@ namespace piktureAPI.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            string connectionString = Environment.GetEnvironmentVariable("CLEARDB_DATABASE_URL");
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=pikturedb;Trusted_Connection=true;TrustServerCertificate=true;");
+            optionsBuilder.UseMySQL(connectionString);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
