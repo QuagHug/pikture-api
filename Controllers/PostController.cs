@@ -2,15 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using piktureAPI.Services.PostService;
 using piktureAPI.Services.UserService;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+
+
 
 namespace piktureAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class PostController : ControllerBase
     {
         private readonly IPostService _postService;
         private readonly IWebHostEnvironment _environment;
+        
         public PostController(IPostService postService, IWebHostEnvironment environment) { 
             _postService = postService; 
             _environment = environment;
@@ -58,14 +64,31 @@ namespace piktureAPI.Controllers
                 return BadRequest("Title not included");
             }
 
-            var imagePath = Path.Combine(_environment.WebRootPath, "Assets", "Posts", image.FileName);
+            string uniqueId = Guid.NewGuid().ToString();
+            string fileName = $"{uniqueId}.jpg";
+
+            Account account = new Account(
+                Environment.GetEnvironmentVariable("CLOUDINARY_CLOUD_NAME"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
+            );
+            Cloudinary cloudinary = new Cloudinary(account);
+
+            var uploadParams = new ImageUploadParams()
+            {
+                File = new FileDescription(fileName, image.OpenReadStream())
+            };
+            var result = cloudinary.Upload(uploadParams);
+            string imagePath = result.SecureUrl.ToString();
+
+            //var imagePath = Path.Combine(_environment.WebRootPath, "Assets", "Posts", image.FileName);
 
             _postService.AddPost(formData, imagePath);
 
-            using (var stream = new FileStream(imagePath, FileMode.Create))
-            {
-                await image.CopyToAsync(stream);
-            }
+            //using (var stream = new FileStream(imagePath, FileMode.Create))
+            //{
+            //    await image.CopyToAsync(stream);
+            //}
 
             return Ok("Image uploaded successfully");
         }
