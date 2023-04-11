@@ -88,3 +88,5 @@ E:\Pikture API\piktureAPI\bin\Debug\net7.0\krb5_64.dll
 E:\Pikture API\piktureAPI\bin\Debug\net7.0\krbcc64.dll
 E:\Pikture API\piktureAPI\bin\Debug\net7.0\MySql.EntityFrameworkCore.dll
 E:\Pikture API\piktureAPI\bin\Debug\net7.0\BouncyCastle.Crypto.dll
+E:\Pikture API\piktureAPI\bin\Debug\net7.0\CloudinaryDotNet.dll
+E:\Pikture API\piktureAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
