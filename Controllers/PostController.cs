@@ -38,15 +38,24 @@ namespace piktureAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPostById(int id)
-        {
-            var post = await _postService.GetPostById(id);
-            string imagePath = post.imageUrl;
+        public async Task<IActionResult> GetPostById(int id) {
+            Account account = new Account(
+                Environment.GetEnvironmentVariable("CLOUDINARY_CLOUD_NAME"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY"),
+                Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET")
+            );
+            Cloudinary cloudinary = new Cloudinary(account);
 
-            byte[] imageBytes = System.IO.File.ReadAllBytes(imagePath);
+            var post = await _postService.GetPostById(id);
+            string imageUrl = post.imageUrl;
+            var url = cloudinary.Api.UrlImgFetch
+                .Secure(true)
+                .Format("jpg")
+                .BuildUrl(imageUrl);
+            
 
             // Return the image as a response with the appropriate MIME type
-            return File(imageBytes, "image/jpeg");
+            return File(url, "image/jpeg");
         }
 
         [HttpPost]
