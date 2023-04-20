@@ -10,8 +10,8 @@ using piktureAPI.Data;
 namespace piktureAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230407105124_firstCreateOnClearDB")]
-    partial class firstCreateOnClearDB
+    [Migration("20230420114455_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -6,7 +6,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace piktureAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class firstCreateOnClearDB : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
