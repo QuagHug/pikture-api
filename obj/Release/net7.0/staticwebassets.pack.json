@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\1.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\1.jpg"
+    },
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\1828f4bb6ac67ac60e7ce82d1ed2eb72.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\1828f4bb6ac67ac60e7ce82d1ed2eb72.jpg"
+    },
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\car.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\car.jpg"
+    },
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\chat-avatar.png",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\chat-avatar.png"
+    },
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\codin.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\codin.jpg"
+    },
+    {
+      "Id": "E:\\Pikture API\\piktureAPI\\wwwroot\\Assets\\Posts\\dog-puppy-on-garden-royalty-free-image-1586966191.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Posts\\dog-puppy-on-garden-royalty-free-image-1586966191.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.piktureAPI.props",
+      "PackagePath": "build\\piktureAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.piktureAPI.props",
+      "PackagePath": "buildMultiTargeting\\piktureAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.piktureAPI.props",
+      "PackagePath": "buildTransitive\\piktureAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.piktureAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
